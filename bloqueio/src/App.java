@@ -1,5 +1,5 @@
 public class App {
     public static void main(String[] args) {
-        new MenuPrincipal(); 
+        new MenuPrincipal(); // Inicia o jogo
     }
 }

@@ -31,31 +31,31 @@ public class MenuPrincipal {
 
         mainPanel.add(Box.createRigidArea(new Dimension(0, 20)));
 
-        // Campo de texto
-        JLabel jogador1Label = new JLabel("Jogador 1:");
-        jogador1Label.setAlignmentX(Component.CENTER_ALIGNMENT);
-        mainPanel.add(jogador1Label);
+        // Entrada de dados
+        JLabel jogador1Label = new JLabel("Nome do Jogador 1:"); // Texto
+        jogador1Label.setAlignmentX(Component.CENTER_ALIGNMENT); // Centraliza na tela
+        mainPanel.add(jogador1Label); // Adiciona na tela
 
-        JTextField jogador1Field = new JTextField();
-        jogador1Field.setMaximumSize(new Dimension(300, 30)); // Define largura fixa
-        mainPanel.add(jogador1Field);
+        JTextField jogador1Field = new JTextField(); // Lugar para colocar o nome
+        jogador1Field.setMaximumSize(new Dimension(300, 30)); // Define largura
+        mainPanel.add(jogador1Field); // Adiciona na tela
 
         mainPanel.add(Box.createRigidArea(new Dimension(0, 10)));
 
         // Campo de texto 2
-        JLabel jogador2Label = new JLabel("Jogador 2:");
-        jogador2Label.setAlignmentX(Component.CENTER_ALIGNMENT);
-        mainPanel.add(jogador2Label);
+        JLabel jogador2Label = new JLabel("Jogador 2:"); // Texto
+        jogador2Label.setAlignmentX(Component.CENTER_ALIGNMENT); // Centraliza na tela
+        mainPanel.add(jogador2Label); // Adiciona na tela
 
-        JTextField jogador2Field = new JTextField();
-        jogador2Field.setMaximumSize(new Dimension(300, 30)); // Define largura fixa
-        mainPanel.add(jogador2Field);
+        JTextField jogador2Field = new JTextField(); // Lugar para colocar o nome
+        jogador2Field.setMaximumSize(new Dimension(300, 30)); // Define largura
+        mainPanel.add(jogador2Field); // Adiciona na tela
 
         mainPanel.add(Box.createRigidArea(new Dimension(0, 20)));
 
         // Botão Iniciar Jogo
-        JButton iniciarButton = new JButton("Iniciar Jogo");
-        iniciarButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+        JButton iniciarButton = new JButton("Iniciar Jogo"); // Cria o botão
+        iniciarButton.setAlignmentX(Component.CENTER_ALIGNMENT); // Adiciona na tela
         iniciarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

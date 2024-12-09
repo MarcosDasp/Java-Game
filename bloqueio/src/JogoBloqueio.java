@@ -13,20 +13,20 @@ public class JogoBloqueio {
     private JLabel statusLabel; // Exibe mensagens do jogo
     private int[] posicaoJogador1 = {0, 3}; // Posição inicial do jogador 1
     private int[] posicaoJogador2 = {6, 3}; // Posição inicial do jogador 2
-    private int barreirasJogador1 = 3; // Número de barreiras do jogador 1
-    private int barreirasJogador2 = 3; // Número de barreiras do jogador 2
-    private String nomeJogador1;
-    private String nomeJogador2;
+    private int barreirasJogador1 = 3; // Define o número de barreiras do jogador 1
+    private int barreirasJogador2 = 3; // Define o número de barreiras do jogador 2
+    private String nomeJogador1; // Nome do jogador 1
+    private String nomeJogador2; // Nome do jogador 2
 
     public JogoBloqueio(String nomeJogador1, String nomeJogador2) {
         this.nomeJogador1 = nomeJogador1;
         this.nomeJogador2 = nomeJogador2;
 
         // Configura janela do tabuleiro
-        tabuleiroJanela = new JFrame("Jogo de Bloqueio");
-        tabuleiroJanela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        tabuleiroJanela.setSize(600, 500); // Janela menor
-        tabuleiroJanela.setLocationRelativeTo(null);
+        tabuleiroJanela = new JFrame("Jogo de Bloqueio"); // Cria a Janela
+        tabuleiroJanela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Fecha quando clica no "X"
+        tabuleiroJanela.setSize(600, 500); // Define o tamanho
+        tabuleiroJanela.setLocationRelativeTo(null); // Centraliza a janela no meio da tela
 
         // Painel principal
         JPanel mainPanel = new JPanel(new BorderLayout());
@@ -48,7 +48,7 @@ public class JogoBloqueio {
             }
         });
 
-        // Label de status
+        // Status ou dados dos jogadores (Turno, Nome, Barreira)
         statusLabel = new JLabel(
                 "Turno: Jogador 1 (" + nomeJogador1 + ") | Barreiras: " + barreirasJogador1 + " - " + barreirasJogador2,
                 SwingConstants.CENTER);
@@ -190,18 +190,24 @@ public class JogoBloqueio {
         for (int i = 0; i < 7; i++) {
             for (int j = 0; j < 7; j++) {
                 JButton botao = botoes.get(i * 7 + j);
+                botao.setIcon(null); // Remove qualquer ícone anterior
                 if (matrizTabuleiro[i][j] == 1) {
                     botao.setBackground(Color.BLUE); // Jogador 1
                 } else if (matrizTabuleiro[i][j] == 2) {
                     botao.setBackground(Color.RED); // Jogador 2
                 } else if (matrizTabuleiro[i][j] == 3) {
-                    botao.setBackground(Color.BLACK); // Barreiras
+                    botao.setBackground(Color.LIGHT_GRAY); // Reseta cor
+                    ImageIcon iconeOriginal = new ImageIcon(getClass().getResource("barreira.png"));
+                    Image img = iconeOriginal.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
+                    botao.setIcon(new ImageIcon(img));
+
                 } else {
                     botao.setBackground(Color.LIGHT_GRAY); // Célula vazia
                 }
             }
         }
     }
+    
 
         public static void main(String[] args) {
             new JogoBloqueio("Jogador 1", "Jogador 2");

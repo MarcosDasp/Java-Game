@@ -84,7 +84,8 @@ public class MenuPrincipal {
         comoJogarButton.addActionListener((ActionEvent e) -> {
             JOptionPane.showMessageDialog(frame,
                     "O objetivo do jogo é mover sua peça até o lado oposto do tabuleiro.\n" +
-                            "Use as barreiras para bloquear o caminho do adversário.",
+                    "O Jogador 1 é representado pela cor azul, e o Jogador 2 pela cor vermelha\n" +
+                    "Use o botão esquerdo para mover sua peça, e o botão direito para colocar uma barreira ao tabuleiro para bloquear o caminho do adversário.",
                     "Como Jogar", JOptionPane.INFORMATION_MESSAGE);
         });
         mainPanel.add(Box.createRigidArea(new Dimension(0, 10))); // Espaçamento
